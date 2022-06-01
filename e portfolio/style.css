@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  height: 100vh;
+  background:  url('img/bgmario5.jpg') no-repeat center center / cover;
+  color: rgb(45, 39, 39);
+  overflow: hidden;   
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 3rem;
+}
+
+h2, h3 {
+    font-weight: 80;
+    margin: 0.3rem;
+}
+ 
+h2 {
+    font-size:  6rem;
+}
+
+h3 {
+    font-size: 1rem;
+    color: rgb(26, 23, 23);
+}
+
+/* Cursor */
+.txt-type > .txt {
+    border-right: 0rem solid rgb(241, 235, 235);
+    color: #c54104;
+}
+
+@media(min-width: 1500px) {
+    h2 {
+        font-size: 5rem;
+    }
+}
+
+@media(min-width: 800px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+@media(max-width: 50px) {
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+       font-size: 2.5rem;
+  }
+}
+
+<!-------------------------ปุ่ม start ----------------------------->
+body {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.hButton {
+    color: rgb(55, 58, 58);
+    font-family: 'Press Start 2P', cursive;;
+    font-weight: 50;
+    font-size: 15px;
+    text-align: center;
+
+    border: solid 3px #f0f4f4;
+    border-radius: 40px;
+    padding: 10px 30px;
+
+    -webkit-transition-duration: 100ms;
+    transition-duration: 100ms;
+} 
+
+.hButton:hover {
+    background-color: #f0e8e5;
+    color: #5f95ff;
+}
+
+<!-------------------------ปุ่ม hamburger ----------------------------->
+
+.menu-wrap{
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 99;
+}
+.toggler{
+	position: absolute;
+	top: 1rem;
+	right: 2rem;
+	width: 40px;
+	height: 40px;
+	z-index: 3;
+	opacity: 0;
+	cursor: pointer;
+}
+.hamburger{
+	position: absolute;
+	top: 1rem;
+	right: 2rem;
+	width: 40px;
+	height: 40px;
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #313131;
+	box-shadow: -3.5px 0px #636363, 0px 5px #000, 0px -3.5px #636363, 5px 0px #000;
+}
+.hamburger>div{
+	position: absolute;
+	width: 60%;
+	height: 3px;
+	border-radius: 1.5px;
+	background-color: #fff;
+	transition: .4s;
+}
+.hamburger>div:before{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	border-radius: 1.5px;
+	background-color: #fff;
+	top: -10px;
+	right: 0;
+	transition: .4s;
+}
+.hamburger>div:after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	border-radius: 1.5px;
+	background-color: #fff;
+	top: 10px;
+	right: 0;
+	transition: .4s;
+}
+.toggler:checked + .hamburger>div{
+	transform: rotate(135deg);
+}
+.toggler:checked:hover + .hamburger>div{
+	transform: rotate(225deg);
+}
+.toggler:checked + .hamburger>div:before, .toggler:checked + .hamburger>div:after{
+	top: 0;
+	transform: rotate(90deg);
+}
+.menu{
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 100vw;
+	height: 100vh;
+	visibility: hidden;
+	transition: .6s;
+}
+.menu > div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-150%) translateY(-50%);
+    width: 2000px;
+    height: 2000px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .6s;
+}
+.menu > div > div{
+	max-width: 90vw;
+	max-height: 100vh;
+	opacity: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.menu > div > div > ul > li{
+	list-style: none;
+}
+.menu > div > div > ul > li > a{
+	text-decoration: none;
+	color: #fff;
+	font-weight: 580;
+	margin: .5rem;
+	transition: .3s;
+	font-size: 1.2rem;
+	display: inline-block;
+	text-transform: uppercase;
+}
+.menu > div > div > ul > li > a:hover{
+	color: 	#c57d26;
+	font-weight: 900;
+	font-size: 1.3rem;
+	transition: .3s;
+}
+.toggler:checked ~ .menu{
+	visibility: visible;
+}
+.toggler:checked ~ .menu > div{
+	transform: translateX(-50%) translateY(-50%);
+}
+.toggler:checked ~ .menu > div > div{
+	opacity: 1;
+}
